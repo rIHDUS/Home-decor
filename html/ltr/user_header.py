@@ -8,6 +8,7 @@ cgitb.enable()
 # Set the content type for the response
 print("Content-Type: text/html\n")
 
+
 # HTML template for the homepage
 home_html = """
 <!DOCTYPE html>
@@ -66,9 +67,9 @@ home_html = """
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="questions.py">Test</a></li>
-                    <li class="nav-item" style="background-color: rgb(223, 45, 45); color:white; border-radius:50px; margin-right:10px">
-                        <a class="nav-link" href="" data-toggle="modal" aria-pressed="false" data-target="#exampleModal">Login/Register</a>
-                    </li>
+                    <li class="nav-item" id="loginRegister" style="background-color: rgb(223, 45, 45); color:white; border-radius:50px; margin-right:10px">
+    <a class="nav-link" href="" data-toggle="modal" aria-pressed="false" data-target="#exampleModal">Login/Register</a>
+</li>
                 </ul>
             </div>
         </div>

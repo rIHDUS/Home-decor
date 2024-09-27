@@ -1,6 +1,45 @@
 #!C:\Python312\python.exe
 import user_header
+print('''
+<script>
+    // Retrieve the username from localStorage
+    var username = localStorage.getItem("User_Name");
 
+    // If the username is not set or empty, prompt the user to log in
+    
+        // Get the first letter of the username
+        var initialLetter = username.charAt(0).toUpperCase(); // Get first letter and capitalize
+
+        // Create a new 'li' element for the new button
+        var newNavItem = document.createElement("li");
+        newNavItem.className = "nav-item";
+        newNavItem.style.cssText = "margin-right:10px";  // Remove background from 'li', moved to 'a'
+
+        // Create the 'a' element for the new button
+        var newNavLink = document.createElement("a");
+        newNavLink.className = "nav-link";
+        newNavLink.href = "profile.py";  // Set this to the user's profile or dashboard page
+        newNavLink.textContent = initialLetter;  // Display the initial letter of the username
+
+        // Style the new button to make it a circle
+        newNavLink.style.cssText = "background-color: rgb(34, 139, 34); color:white; text-align:center; display:flex; justify-content:center; align-items:center; width:50px; height:50px; border-radius:50%; font-size:20px;";
+
+        // Append the 'a' element to the new 'li' element
+        newNavItem.appendChild(newNavLink);
+
+        // Find the parent element where you want to add this new button (e.g., the navigation bar)
+        var navBar = document.getElementById("loginRegister").parentNode;
+
+        // Remove the original "Login/Register" button
+        var loginRegisterElement = document.getElementById("loginRegister");
+        if (loginRegisterElement) {
+            navBar.removeChild(loginRegisterElement);
+        }
+
+        // Append the new button to the navigation bar
+        navBar.appendChild(newNavItem);
+    
+</script>''')
 print('''
 <!DOCTYPE html>
 <html lang="en">
